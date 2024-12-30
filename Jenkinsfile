@@ -18,7 +18,8 @@ pipeline {
          stage('Install') {
             steps {
                 dir('frontend/register') { 
-                    bat '''npm install'''
+                    bat '''npm install
+                    npm run lint'''
                 }
             }
         }
