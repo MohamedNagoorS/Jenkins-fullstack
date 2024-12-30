@@ -28,7 +28,9 @@ pipeline {
         
         stage('Build') {
             steps {
+                 dir('frontend/register'){
                 bat '''npm run build'''
+            }
             }
         }
         stage('SonarAnalysis'){
