@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+    
+    environment {
+        NODE_VERSION = '16'
+        API_URL = 'http://your-backend-url'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Install') {
+            steps {
+                bat'''npm install'''
+            }
+        }
+        
+        stage('Lint') {
+            steps {
+                bat '''npm run lint'''
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                bat '''npm test'''
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                bat '''npm run build'''
+            }
+        }
+        
+       
+        }
+    
+    
+    post {
+        always {
+            echo "Hi"
+        }
+    }
+}
