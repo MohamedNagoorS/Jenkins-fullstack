@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        NODE_VERSION = '16'
+        NODE_VERSION = '23'
         API_URL = 'http://your-backend-url'
     }
     
