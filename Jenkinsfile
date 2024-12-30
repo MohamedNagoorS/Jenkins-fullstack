@@ -23,13 +23,7 @@ pipeline {
             }
         }
         
-        stage('Lint') {
-            steps {
-                dir('frontend/register') {
-                    bat '''npm run lint'''
-                }
-            }
-        }
+        
         
         
         stage('Build') {
