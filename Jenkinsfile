@@ -50,13 +50,16 @@ pipeline {
                 '''
             }
        
-        }
+        }}
     
     
     post {
-        always {
-            echo "Hi"
+        success{
+            echo "DONE SUCCESSFULLY"
+        }
+        failure{
+            echo "SOMETHING IS WRONG"
         }
     }
 }
-}
+
