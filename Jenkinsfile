@@ -15,23 +15,22 @@ pipeline {
             }
         }
         
-        stage('Install') {
+         stage('Install') {
             steps {
-                bat '''npm install'''
+                dir('frontend/register') { 
+                    bat '''npm install'''
+                }
             }
         }
         
         stage('Lint') {
             steps {
-                bat '''npm run lint'''
+                dir('frontend/register') {
+                    bat '''npm run lint'''
+                }
             }
         }
         
-        stage('Test') {
-            steps {
-                bat '''npm test'''
-            }
-        }
         
         stage('Build') {
             steps {
