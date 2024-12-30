@@ -1,9 +1,11 @@
 pipeline {
     agent any
+    tools{
+        nodejs 'sonarnode'
+    }
     
     environment {
         NODE_VERSION = '23'
-        API_URL = 'http://your-backend-url'
     }
     
     stages {
@@ -15,7 +17,7 @@ pipeline {
         
         stage('Install') {
             steps {
-                bat'''npm install'''
+                bat '''npm install'''
             }
         }
         
